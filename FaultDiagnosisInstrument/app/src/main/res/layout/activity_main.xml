@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.mao.faultdiagnosisinstrument.MainActivity"
+    android:weightSum="1">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设备IP" />
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/IP"
+            android:layout_weight="1.04" />
+            <!--android:text="192.168.43.81"-->
+            <!--android:layout_weight="0.23" -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="端口" />
+
+        <EditText
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/port" />
+            <!--android:text="60001"-->
+            <!--android:layout_weight="0.50"-->
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="337dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="168dp"
+            android:layout_height="wrap_content"
+            android:text="连接"
+            android:id="@+id/connectButton"/>
+        <Button
+            android:layout_width="168dp"
+            android:layout_height="wrap_content"
+            android:text="断开"
+            android:id="@+id/breakButton"/>
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="334dp"
+        android:layout_height="wrap_content"
+        android:text="采样"
+        android:id="@+id/paintButton"/>
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+<!--设备组-->
+      <LinearLayout
+       android:layout_width="83dp"
+       android:layout_height="400dp"
+       android:orientation="vertical">
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="36dp"
+              android:gravity="center"
+              android:textSize="35px"
+
+              android:text="设备选择"/>
+          <RadioGroup
+              android:layout_width="match_parent"
+              android:layout_height="330dp"
+              android:id="@+id/equipmentGroup">
+              <RadioButton
+                  android:layout_width="match_parent"
+                  android:layout_height="54dp"
+                  android:gravity="center"
+                  android:id="@+id/e1"
+                  android:text="设备1号"/>
+              <RadioButton
+                  android:layout_width="match_parent"
+                  android:layout_height="54dp"
+                  android:gravity="center"
+                  android:id="@+id/e2"
+                  android:text="设备2号"/>
+              <RadioButton
+                  android:layout_width="match_parent"
+                  android:layout_height="54dp"
+                  android:gravity="center"
+                  android:id="@+id/e3"
+                  android:text="设备3号"/>
+              <RadioButton
+                  android:layout_width="match_parent"
+                  android:layout_height="54dp"
+                  android:gravity="center"
+                  android:id="@+id/e4"
+                  android:text="设备4号"/>
+              <RadioButton
+                  android:layout_width="match_parent"
+                  android:layout_height="54dp"
+                  android:gravity="center"
+                  android:id="@+id/e5"
+                  android:text="设备5号"/>
+              <RadioButton
+                  android:layout_width="match_parent"
+                  android:layout_height="54dp"
+                  android:gravity="center"
+                  android:id="@+id/e6"
+                  android:text="设备6号"/>
+               </RadioGroup>
+          </LinearLayout>
+<!--采样频率组-->
+        <LinearLayout
+            android:layout_width="85dp"
+            android:layout_height="400dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:gravity="center"
+                android:textSize="35px"
+                android:text="采样频率"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="330dp"
+                android:id="@+id/caiyangpinglvGroup">
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="1000Hz"
+                    android:id="@+id/plv1"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="2000Hz"
+                    android:id="@+id/plv2"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="5000Hz"
+                    android:id="@+id/plv3"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="10000Hz"
+                    android:id="@+id/plv4"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="20000Hz"
+                    android:id="@+id/plv5"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="40000Hz"
+                    android:id="@+id/plv6"/>
+            </RadioGroup>
+        </LinearLayout>
+
+<!--采样点数组-->
+        <LinearLayout
+            android:layout_width="83dp"
+            android:layout_height="400dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:gravity="center"
+                android:textSize="35px"
+                android:text="采样点数"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="330dp"
+                android:id="@+id/pointGroup"
+                android:orientation="vertical">
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="512"
+                    android:id="@+id/pg1"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="1024"
+                    android:id="@+id/pg2"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="2048"
+                    android:id="@+id/pg3"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="4096"
+                    android:id="@+id/pg4"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="8192"
+                    android:id="@+id/pg5"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="16384"
+                    android:id="@+id/pg6"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!--截止频率-->
+        <LinearLayout
+            android:layout_width="85dp"
+            android:layout_height="400dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:gravity="center"
+                android:textSize="35px"
+                android:text="截止频率" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="330dp"
+                android:id="@+id/jiezhipinlvGroup"
+                android:orientation="vertical">
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="100Hz"
+                    android:id="@+id/jlv1"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="200Hz"
+                    android:id="@+id/jlv2"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="500Hz"
+                    android:id="@+id/jlv3"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="1000Hz"
+                    android:id="@+id/jlv4"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="2000Hz"
+                    android:id="@+id/jlv5"/>
+
+
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="5000Hz"
+                    android:id="@+id/jlv6"/>
+            </RadioGroup>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+    <!--与socket的信息交互-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="247dp"
+            android:layout_height="wrap_content"
+            android:text="请输入信息"
+            android:id="@+id/sendMessage"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发送"
+            android:id="@+id/sendButton" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/messageShow"
+            android:background="@drawable/textview_border"/>
+    </LinearLayout>
+    <!--<SurfaceView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="219dp"-->
+        <!--android:id="@+id/surfaceView"-->
+        <!--android:layout_weight="1.20" />-->
+</LinearLayout>

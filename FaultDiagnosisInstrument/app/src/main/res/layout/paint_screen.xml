@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/b1"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="时域图形" />
+
+        <Button
+            android:id="@+id/b2"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="FFT变换" />
+
+        <Button
+            android:id="@+id/b3"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="小波变换" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/b4"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="HILBERT包络谱" />
+
+        <Button
+            android:id="@+id/b5"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="自相关分析" />
+
+        <Button
+            android:id="@+id/b6"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="数学形态学分析" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="采样频率" />
+
+        <TextView
+            android:id="@+id/caiyangpinlvT"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/textview_border"
+            android:gravity="center"
+            android:text="" />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="采样点数" />
+
+        <TextView
+            android:id="@+id/caiyangdianshuT"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/textview_border"
+            android:gravity="center"
+            android:text="" />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="截止频率" />
+
+        <TextView
+            android:id="@+id/jiezhipinlvT"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/textview_border"
+            android:gravity="center"
+            android:text="" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/pageBackButton"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="上一页" />
+
+        <Button
+            android:id="@+id/pageForwardButton"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="下一页" />
+    </LinearLayout>
+
+//surfaceview画面设计
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Y1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="72dp"
+                    android:text=""
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="72dp"
+                    android:id="@+id/Y2"
+                    android:text=""
+                    android:textColor="@color/black" />
+                <TextView
+                    android:id="@+id/Y3"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:text=""
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="72dp"
+                    android:id="@+id/Y4"
+                    android:text=""
+                    android:textColor="@color/" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/Y5"
+                    android:text=""
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <SurfaceView
+                android:id="@+id/sfv"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.98" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+<!--横轴坐标-->
+            <TextView
+                android:id="@+id/X1"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="right"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:id="@+id/X2"
+                android:text=""
+                android:textColor="@color/black" />
+            <TextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:id="@+id/X3"
+                android:text=""
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="82dp"
+                android:gravity="right"
+                android:layout_height="wrap_content"
+                android:id="@+id/X4"
+                android:text=""
+                android:textColor="@color/black" />
+            <TextView
+                android:layout_width="70dp"
+                android:gravity="right"
+                android:layout_height="wrap_content"
+                android:id="@+id/X5"
+                android:text=""
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+</LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="方差" />
+
+        <TextView
+            android:id="@+id/fangcha"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/textview_border"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="有效值" />
+
+        <TextView
+            android:id="@+id/youxiaozhi"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/textview_border"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="歪度" />
+
+        <TextView
+            android:id="@+id/waidu"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/textview_border"
+            android:gravity="center"
+          />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="峭度"/>
+
+        <TextView
+            android:id="@+id/qiaodu"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/textview_border"
+            android:gravity="center"
+      />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="裕度指标" />
+
+        <TextView
+            android:id="@+id/yudu"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/textview_border"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="峭度指标" />
+
+        <TextView
+            android:id="@+id/qiaoduzhibiao"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/textview_border"
+            android:gravity="center" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="返回主界面" />
+
+        <Button
+            android:id="@+id/reportButton"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="查看诊断报告" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
